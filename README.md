@@ -10,5 +10,4 @@
     * Multi-User Management
 
 ### Requirements
-* Yeoman
-* Yeoman generator-angular-fullstack
+* http://scotch.io/bar-talk/setting-up-a-mean-stack-single-page-application
