@@ -7,27 +7,28 @@
     var http = require('http');
     var path = require('path');
     var mongoose = require('mongoose');
-    var passport = require('passport');
     var fs = require('fs');
-    var flash = require('connect-flash');
-
 
     // configuration
 
     // config files
-    var db = require('./config/db');
+    mongoose.connect('mongodb://localhost/test');
 
     var port = process.env.PORT || 8080;
-    mongoose.connect(db.url);
+
+    // mongoose config
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function callback() {
+        // callback function
+    });
 
     app.configure(function() {
-
         // express config
         app.use(express.static(__dirname + '/public'));
         app.use(express.logger('dev'));
         app.use(express.bodyParser());
         app.use(express.methodOverride());
-        app.use(express.session({secret: 'SECRET'}));
 
     });
 
