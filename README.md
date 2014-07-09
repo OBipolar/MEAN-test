@@ -2,6 +2,9 @@
 
 ### This Repo is for sample features practice and display
 
+### Features
+* Simple Backend\Frontend Structure
+
 ### ToDo
 * User login(authentication)
 * Multi-Step Form(as in the angular-multiStepForm project)
@@ -11,3 +14,7 @@
 
 ### Requirements
 * http://scotch.io/bar-talk/setting-up-a-mean-stack-single-page-application
+* Express
+* mongoose
+* Passport.js
+* Passport-local
