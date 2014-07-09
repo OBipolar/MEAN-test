@@ -12,7 +12,25 @@
     // configuration
 
     // config files
-    mongoose.connect('mongodb://localhost/test');
+    mongoose.connect('mongodb://localhost/temp', function(err) {
+
+        // save to mongodb
+        silence.save(function (err, silence) {
+            if (err) return console.error(err);
+            silence.speak();
+        });
+        fluffy.save(function (err, fluffy) {
+            if (err) return console.error(err);
+            fluffy.speak();
+        });
+
+        // find from mongodb
+        Kitten.find(function (err, kittens) {
+            if (err) return console.error(err);
+            console.log(kittens);
+        });
+
+    });
 
     var port = process.env.PORT || 8080;
 
@@ -22,6 +40,23 @@
     db.once('open', function callback() {
         // callback function
     });
+
+        // new Schema init
+        var kittySchema = mongoose.Schema({
+            name: String
+        });
+        //
+        kittySchema.methods.speak = function() {
+            var greeting = this.name
+                ? 'Meow name is ' + this.name
+                : 'I dont have a name';
+            console.log(greeting);
+        };
+        // new model init
+        var Kitten = mongoose.model('Kitten', kittySchema);
+        // new instance of the model
+        var silence = new Kitten({ name: 'Silence'});
+        var fluffy = new Kitten({ name: 'fluffy'});
 
     app.configure(function() {
         // express config
@@ -33,7 +68,7 @@
     });
 
     // $routes
-    require('./app/routes')(app, passport);
+    require('./app/routes')(app);
 
     // start app
     app.listen(port);
