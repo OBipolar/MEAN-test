@@ -4,6 +4,7 @@
 
 ### Features
 * Simple Backend\Frontend Structure
+* Data Input\Output
 
 ### ToDo
 * User login(authentication)
