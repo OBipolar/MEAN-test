@@ -18,7 +18,8 @@ function mainController($scope, $http) {
     $scope.createTodo = function() {
         $http.post('/api/todos', $scope.formData)
             .success(function(data) {
-                $scope.formData = [];
+                console.log($scope.formData);
+                $scope.formData = {};
                 $scope.todos = data;
                 console.log(data);
             })
@@ -29,13 +30,13 @@ function mainController($scope, $http) {
 
     // delete a todo after checking it
     $scope.deleteTodo = function(id) {
-        $http.delete('/api/todos' + id)
+        $http.delete('/api/todos/' + id)
             .success(function(data) {
                 $scope.todos = data;
                 console.log(data);
             })
             .error(function(data) {
-                console.log('Erro: ' + data);
+                console.log('Error: ' + data);
             });
     };
 

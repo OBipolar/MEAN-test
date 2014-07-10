@@ -12,6 +12,7 @@
 * Admin System
     * Manage Question Entries
     * Multi-User Management
+* JSON Input\Output
 
 ### Requirements
 * http://scotch.io/bar-talk/setting-up-a-mean-stack-single-page-application
