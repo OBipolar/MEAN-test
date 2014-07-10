@@ -16,6 +16,8 @@
 
 ### Requirements
 * http://scotch.io/bar-talk/setting-up-a-mean-stack-single-page-application
+* http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular
+* http://angular-passport.herokuapp.com/
 * Express
 * mongoose
 * Passport.js

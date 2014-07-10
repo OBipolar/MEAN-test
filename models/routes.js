@@ -1,5 +1,4 @@
 var Todo = require('./todo');
-
 // routes
 module.exports = function(app) {
         // api
@@ -43,6 +42,7 @@ module.exports = function(app) {
                 });
             });
         });
+
 
     // application
     app.get('*', function(req, res) {
