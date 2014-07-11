@@ -1,0 +1,36 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
+
+  <ul class="list-group">
+    <h3>User Management <span class="label label-info">{{users.length}}</span></h3>
+    <li class="list-group-item" ng-repeat="user in users">
+        <strong>{{user.name}}</strong><br>
+        <span class="text-muted">{{user.email}}</span>
+        <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+    </li>
+
+    <h3>Entries Management <span class="label label-info">{{entries.length}}</span></h3>
+    <li class="list-group-item" ng-repeat="entry in entries">
+        <strong>{{entry._id}}</strong><br>
+        <span class="text-muted">{{entry.text}}</span>
+        <a ng-click="deleteEntry(entry._id)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+    </li>
+
+    <h3>Insert New Entries</h3>
+        <form>
+          <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+            <input type="text" class="form-control input-lg " placeholder="Insert Here" ng-model="formData.text">
+            <!-- createToDo() WILL CREATE NEW TODOS -->
+            <br>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="createEntry()">Add</button>
+        </form>
+
+  </ul>
+
+
+
+
+<hr>
+</div>

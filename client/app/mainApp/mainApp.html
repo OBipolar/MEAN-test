@@ -1,0 +1,25 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+
+<div class="container">
+
+  <ul class="list-group">
+
+
+    <h3>Entries List <span class="label label-info">{{entries.length}}</span></h3>
+    <li class="list-group-item" ng-repeat="entry in entries">
+        <strong>{{entry._id}}</strong><br>
+        <span class="text-muted">{{entry.text}}</span>
+    </li>
+  </ul>
+
+</div>
+
+
+
+<footer class="footer">
+  <div class="container">
+      <p>Yeoman Team | AngularJS Full-Stack | Obipolar</p>
+  </div>
+</footer>
