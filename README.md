@@ -5,13 +5,13 @@
 ### Features
 * Simple Backend\Frontend Structure
 * Data Input\Output
-
-### ToDo
 * User login(authentication)
-* Multi-Step Form(as in the angular-multiStepForm project)
 * Admin System
     * Manage Question Entries
     * Multi-User Management
+
+### ToDo
+* Multi-Step Form(as in the angular-multiStepForm project)
 * JSON Input\Output
 
 ### Requirements
@@ -22,3 +22,5 @@
 * mongoose
 * Passport.js
 * Passport-local
+* Yeoman
+* Yeoman angular-fullstack
